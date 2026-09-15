@@ -1,15 +1,22 @@
 import neopixel
+import time
 from machine import Pin
 print("start")
 lights = neopixel.NeoPixel(Pin(15),2)
 
-color1 = [20, 20, 0]
-thres = 20
+rainbow = [(20, 0, 0),
+           (20, 5, 0),
+           (20, 20, 0),
+           (0, 20, 0),
+           (0, 0, 20),
+           (5, 0, 10),
+           (10, 10, 10)]
+
 while True:
-    if color1(1) > thres && color1(1) >= 0
-        color1 = [color1(1) - 1, color1(2), color1(3)]
-    lights[0] = color1
-    lights[1] = [0,0,20]
+        for i in range(0, len(rainbow)):
+            lights[0] = lights[1] = rainbow[i]
+            lights.write()
+            time.sleep(.5)
 
 lights.write()
 print("done")
