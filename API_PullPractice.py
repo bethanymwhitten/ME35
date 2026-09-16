@@ -2,6 +2,7 @@
 import network
 import urequests
 import time
+import json
  
 #setting up SSID and password 
 SSID = "tufts_eecs" #use tufts_eecs
